@@ -1,0 +1,51 @@
+<h1>Webhooks</h1>
+
+<table class="ui single line center table webhook">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>URL</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @webhooks.each do |webhook| %>
+      <tr>
+        <td>
+          <p class='truncate'>
+            <%= webhook.name %>
+          </p>
+        </td>
+        <td>
+          <p class='truncate'>
+            <%= webhook.url %>
+          </p>
+        </td>
+        
+        <td class="right aligned">
+          <div class="three wide">
+
+            <%= link_to( 'Editar',
+                          edit_webhook_path(webhook),
+                          class: 'ui teal basic button tiny'
+            ) %>
+
+            <%= link_to( 'Deletar',
+                          webhook,
+                          method: :delete,
+                          data: { confirm: 'Você realmente deseja deletar este webhook?' },
+                          class: 'ui red basic button tiny'
+            )%>
+            
+          </div>
+        </td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to( 'Novo Webhook',
+              new_webhook_path,
+              class: 'ui green basic button small') %>

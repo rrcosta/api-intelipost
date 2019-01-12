@@ -12,6 +12,13 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 
+if ENV['RAILS_ENV'] == 'test'
+  require 'simplecov'
+  SimpleCov.start 'rails'
+end
+
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -34,7 +41,7 @@ RSpec.configure do |config|
   end
 
   # rails-controller-testing
-  [:controller, :view, :request].each do |type|
+  [:controller, :view ].each do |type|
     config.include ::Rails::Controller::Testing::TestProcess, :type => type
     config.include ::Rails::Controller::Testing::TemplateAssertions, :type => type
     config.include ::Rails::Controller::Testing::Integration, :type => type

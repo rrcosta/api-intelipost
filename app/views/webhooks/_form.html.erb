@@ -1,0 +1,21 @@
+<div class="content">
+  <%= simple_form_for @webhook, html: { class: 'ui form' } do |f| %>
+    <div class='two fields'>
+      <div class='field'>
+        <%= f.input :name, label: "Nome" %>
+      </div>
+
+      <div class='field'>
+        <%= f.input :url, required: true, label: "URL" %>
+      </div>
+    </div>
+
+    <div class='field'>
+      <%#= f.input :status, html: { class: 'ui toggle checkbox' } %>
+    </div>
+
+    <div class='field'>
+      <%= f.submit 'Criar Webhook', class: 'ui green basic button small'  %>
+    </div>
+  <% end %>
+</div>
