@@ -12,6 +12,11 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 
+if ENV['RAILS_ENV'] == 'test'
+  require 'simplecov'
+  SimpleCov.start 'rails'
+end
+
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
