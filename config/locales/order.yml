@@ -1,0 +1,6 @@
+en:
+  enumerations:
+    order:
+      in_transit: "Pedido em transito"
+      to_be_delivered: "Pedido saiu para entrega"
+      delivered: "Pedido entregue"
