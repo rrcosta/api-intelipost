@@ -28,7 +28,7 @@ class WebhooksController < ApplicationController
 
     respond_to do |format|
       if @webhook.save
-        format.html { redirect_to @webhook, notice: 'Webhook was successfully created.' }
+        format.html { redirect_to @webhook, notice: 'Webhook criado com sucesso.' }
         format.json { render :show, status: :created, location: @webhook }
       else
         format.html { render :new }
@@ -42,10 +42,10 @@ class WebhooksController < ApplicationController
   def update
     respond_to do |format|
       if @webhook.update(webhook_params)
-        format.html { redirect_to @webhook, notice: 'Webhook was successfully updated.' }
+        format.html { redirect_to @webhook, notice: 'Webhook atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @webhook }
       else
-        format.html { render :edit }
+        format.html { render :edit, notice: 'Webhook não pode ser atualizado. Favor Verificar os campos' }
         format.json { render json: @webhook.errors, status: :unprocessable_entity }
       end
     end
@@ -56,7 +56,7 @@ class WebhooksController < ApplicationController
   def destroy
     @webhook.destroy
     respond_to do |format|
-      format.html { redirect_to webhooks_url, notice: 'Webhook was successfully destroyed.' }
+      format.html { redirect_to webhooks_url, notice: 'Webhook removido com sucesso' }
       format.json { head :no_content }
     end
   end
