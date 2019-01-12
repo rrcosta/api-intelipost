@@ -1,31 +1,51 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Webhooks</h1>
 
-<table>
+<table class="ui single line center table webhook">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Url</th>
-      <th>Status</th>
-      <th colspan="3"></th>
+      <th>Nome</th>
+      <th>URL</th>
+      <th></th>
     </tr>
   </thead>
-
   <tbody>
     <% @webhooks.each do |webhook| %>
       <tr>
-        <td><%= webhook.name %></td>
-        <td><%= webhook.url %></td>
-        <td><%= webhook.status %></td>
-        <td><%= link_to 'Show', webhook %></td>
-        <td><%= link_to 'Edit', edit_webhook_path(webhook) %></td>
-        <td><%= link_to 'Destroy', webhook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <p class='truncate'>
+            <%= webhook.name %>
+          </p>
+        </td>
+        <td>
+          <p class='truncate'>
+            <%= webhook.url %>
+          </p>
+        </td>
+        
+        <td class="right aligned">
+          <div class="three wide">
+
+            <%= link_to( 'Editar',
+                          edit_webhook_path(webhook),
+                          class: 'ui teal basic button tiny'
+            ) %>
+
+            <%= link_to( 'Deletar',
+                          webhook,
+                          method: :delete,
+                          data: { confirm: 'Você realmente deseja deletar este webhook?' },
+                          class: 'ui red basic button tiny'
+            )%>
+            
+          </div>
+        </td>
       </tr>
-    <% end %>
+      <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Webhook', new_webhook_path %>
+<%= link_to( 'Novo Webhook',
+              new_webhook_path,
+              class: 'ui green basic button small') %>
