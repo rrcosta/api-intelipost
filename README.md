@@ -175,6 +175,8 @@ http://devopslab.com.br/como-instalar-e-configurar-o-the-foreman/
 
 2. Vá ao diretório do projeto e execute
 
+        $ gem install json -v '2.1.0' --source 'https://rubygems.org/'
+
         $ bundle install
 
 3. Copie o conteúdo do arquivo .env.example para o arquivo .env e altere com as credenciais de seu ambiente local
