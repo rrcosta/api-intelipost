@@ -3,8 +3,8 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= ENV['API-INTELIPOST_DB_USER_DEV'] %>
-  password: <%= ENV['API-INTELIPOST_DB_PASSWORD_DEV'] %>
+  username: <%= ENV['DB_USER_DEV'] %>
+  password: <%= ENV['DB_PASSWORD_DEV'] %>
 
 development:
   <<: *default
@@ -17,5 +17,5 @@ test:
 production:
   <<: *default
   database: api-intelipost_production
-  username: <%= ENV['API-INTELIPOST_DB_USER_PRD'] %>
-  password: <%= ENV['API-INTELIPOST_DB_PASSWORD_PRD'] %>
+  username: <%= ENV['DB_USER_PRD'] %>
+  password: <%= ENV['DB_PASSWORD_PRD'] %>
