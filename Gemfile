@@ -31,6 +31,7 @@ group :development, :test do
   gem 'rails-controller-testing' 
   gem 'faker'
   gem 'simplecov', require: false, group: :test
+  gem 'rspec-json_expectations'
 end
 
 group :development do
