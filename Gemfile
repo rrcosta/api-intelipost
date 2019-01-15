@@ -19,6 +19,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'semantic-ui-sass', '~> 2.4.0.1'
 gem 'simple_form', '~> 4.1.0'
 gem 'enumerate_it', '~> 1.7.0'
+gem 'rack-cors'
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
