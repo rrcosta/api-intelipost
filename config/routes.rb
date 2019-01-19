@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
+  root 'webhooks#index'
+
+  resources :orders
   resources :webhooks
   
-  root 'webhooks#index'
+  namespace :api, constraints: { format: 'json' } do
+    namespace :v1 do
+      resources :orders
+      resources :webhooks
+    end
+  end
 end

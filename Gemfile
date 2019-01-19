@@ -19,6 +19,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'semantic-ui-sass', '~> 2.4.0.1'
 gem 'simple_form', '~> 4.1.0'
 gem 'enumerate_it', '~> 1.7.0'
+gem 'rack-cors'
+gem 'virtus', '~> 1.0.5'
+gem 'aldous'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -28,9 +31,11 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'database_cleaner'
   gem 'shoulda-matchers', '4.0.0.rc1'
-  gem 'rails-controller-testing' 
+  gem 'rails-controller-testing'
   gem 'faker'
   gem 'simplecov', require: false, group: :test
+  gem 'rspec-json_expectations'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -39,5 +44,3 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
-
