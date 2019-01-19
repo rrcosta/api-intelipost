@@ -35,6 +35,7 @@ group :development, :test do
   gem 'faker'
   gem 'simplecov', require: false, group: :test
   gem 'rspec-json_expectations'
+  gem 'dotenv-rails'
 end
 
 group :development do
