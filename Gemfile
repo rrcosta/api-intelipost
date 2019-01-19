@@ -21,6 +21,7 @@ gem 'simple_form', '~> 4.1.0'
 gem 'enumerate_it', '~> 1.7.0'
 gem 'rack-cors'
 gem 'virtus', '~> 1.0.5'
+gem 'aldous'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
