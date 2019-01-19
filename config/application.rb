@@ -37,6 +37,14 @@ module ApiIntelipost
         resource '*', headers: :any, methods: [:get, :post, :options]
       end
     end
-    
+
+    # Aldous - Includes Services folder
+    config.autoload_paths += %W(
+      #{config.root}/app/services
+    )
+
+    config.eager_load_paths += %W(
+      #{config.root}/app/services
+    )
   end
 end
