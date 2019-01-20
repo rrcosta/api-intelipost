@@ -5,7 +5,7 @@ module Api
 
       def index
         @webhook = Webhook.order('created_at DESC')
-        render json: { status: 'SUCCESS', message: 'webhooks carregados', data: @webhook}, status: :ok
+        render json: @webhook, status: :ok
       end
 
       def show
@@ -15,9 +15,7 @@ module Api
       end
 
       def destroy
-        return render json: { data: @webhook.errors }, status: :unprocessable_entity unless @webhook
-
-        render head :no_content, status: :ok
+        render json: @webhook.destroy, status: :ok
       end
 
       private
