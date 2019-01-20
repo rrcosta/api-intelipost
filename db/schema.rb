@@ -16,7 +16,8 @@ ActiveRecord::Schema.define(version: 2019_01_14_234202) do
   enable_extension "plpgsql"
 
   create_table "orders", force: :cascade do |t|
-    t.json "data"
+    t.json "data", default: {}
+    t.boolean "status", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
