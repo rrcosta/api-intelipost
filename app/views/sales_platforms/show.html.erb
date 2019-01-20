@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Orderid:</strong>
+  <%= @sales_platform.orderId %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @sales_platform.status %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @sales_platform.date %>
+</p>
+
+<p>
+  <strong>Status delivered:</strong>
+  <%= @sales_platform.status_delivered %>
+</p>
+
+<%= link_to 'Edit', edit_sales_platform_path(@sales_platform) %> |
+<%= link_to 'Back', sales_platforms_path %>
