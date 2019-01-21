@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :webhooks
       resources :sales_platforms, except: :show
+      resources :trackers, only: :create
     end
   end
 end
