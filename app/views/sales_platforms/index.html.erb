@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sales Platforms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Orderid</th>
+      <th>Status</th>
+      <th>Date</th>
+      <th>Status delivered</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sales_platforms.each do |sales_platform| %>
+      <tr>
+        <td><%= sales_platform.orderId %></td>
+        <td><%= sales_platform.status %></td>
+        <td><%= sales_platform.date %></td>
+        <td><%= sales_platform.status_delivered %></td>
+        <td><%= link_to 'Show', sales_platform %></td>
+        <td><%= link_to 'Edit', edit_sales_platform_path(sales_platform) %></td>
+        <td><%= link_to 'Destroy', sales_platform, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sales Platform', new_sales_platform_path %>

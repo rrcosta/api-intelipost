@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_20_180915) do
+ActiveRecord::Schema.define(version: 2019_01_21_004917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "sales_platforms", force: :cascade do |t|
+    t.integer "orderId"
+    t.string "status", default: "0"
+    t.datetime "date"
+    t.boolean "status_delivered", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "trackers", force: :cascade do |t|
+    t.integer "order_id"
+    t.json "event", default: {}
+    t.json "package", default: {}
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "webhooks", force: :cascade do |t|
     t.string "name"

@@ -1,0 +1,2 @@
+module SalesPlatformsHelper
+end

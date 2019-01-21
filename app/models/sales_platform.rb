@@ -1,0 +1,2 @@
+class SalesPlatform < ApplicationRecord
+end
