@@ -23,6 +23,7 @@ gem 'rack-cors'
 gem 'virtus', '~> 1.0.5'
 gem 'aldous'
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'foreman'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
