@@ -1,10 +1,9 @@
 module Api
   module V1
     class TrackersController < Api::ApplicationController
-
       def create
         @tracker = Tracker.new(tracker_params)
-        render json: { @tracker status: :created, location: @tracker}
+        render json: { @tracker status: :created, location: @tracker }
       end
 
       private
@@ -19,7 +18,7 @@ module Api
       def package_params
         {
           :package_id,
-          package_invoice: package_invoice_params
+          :package_invoice => :package_invoice_params
         }
       end
 
